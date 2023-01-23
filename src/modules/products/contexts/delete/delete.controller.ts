@@ -6,7 +6,7 @@ export default class DeleteController {
 
 	index(req: express.Request, res: express.Response) {
 		this.service
-			.deleteCategories(req, res)
+			.deleteProduct(req, res)
 			.then((data) => {
 				res.status(200).json(data);
 			})

@@ -6,7 +6,7 @@ export default class PostController {
 
 	index(req: express.Request, res: express.Response) {
 		this.service
-			.postCategories(req, res)
+			.postProduct(req, res)
 			.then((data) => {
 				res.status(200).json(data);
 			})

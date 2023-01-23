@@ -1,15 +1,15 @@
 import { Model, Schema } from 'mongoose';
+import { CategorySchema } from '../../../../shared/entities/category';
 import * as express from 'express';
-import { OrderSchema } from '../../../../shared/entities/order';
 
-export default class PostService {
+export default class PostCategoriesService {
 	private schema: Object;
 
-	public async postProduct(
+	public async postCategories(
 		req: express.Request,
 		res: express.Response,
 	): Promise<express.Response<Schema, Record<string, any>>> {
-		this.schema = await OrderSchema.create(req.body);
+		this.schema = await CategorySchema.create(req.body);
 
 		return res.json(this.schema);
 	}

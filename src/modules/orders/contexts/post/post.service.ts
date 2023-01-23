@@ -5,7 +5,7 @@ import { OrderSchema } from '../../../../shared/entities/order';
 export default class PostService {
 	private schema: Object;
 
-	public async postProduct(
+	public async postOrder(
 		req: express.Request,
 		res: express.Response,
 	): Promise<express.Response<Schema, Record<string, any>>> {

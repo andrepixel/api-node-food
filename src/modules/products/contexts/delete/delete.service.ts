@@ -1,16 +1,18 @@
-import { Model, Schema } from 'mongoose';
 import * as express from 'express';
+import { Schema } from 'mongoose';
 import { OrderSchema } from '../../../../shared/entities/order';
 
-export default class PostService {
+export default class DeleteService {
 	private schema: Object;
 
-	public async postProduct(
+	public async deleteProduct(
 		req: express.Request,
 		res: express.Response,
 	): Promise<express.Response<Schema, Record<string, any>>> {
-		this.schema = await OrderSchema.create(req.body);
+		this.schema = OrderSchema.findById(req.params.id);
 
-		return res.json(this.schema);
+		const query = await OrderSchema.deleteOne();
+
+		return res.json(query);
 	}
 }

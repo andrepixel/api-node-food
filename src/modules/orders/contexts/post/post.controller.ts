@@ -1,12 +1,12 @@
-import GetAllService from './getall.service';
 import * as express from 'express';
+import PostService from './post.service';
 
-export default class GetAllController {
-	constructor(private readonly service: GetAllService) {}
+export default class PostController {
+	constructor(private readonly service: PostService) {}
 
 	index(req: express.Request, res: express.Response) {
 		this.service
-			.getProducts(req, res)
+			.postOrder(req, res)
 			.then((data) => {
 				res.status(200).json(data);
 			})

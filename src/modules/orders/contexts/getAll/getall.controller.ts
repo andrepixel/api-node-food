@@ -6,7 +6,7 @@ export default class GetAllController {
 
 	index(req: express.Request, res: express.Response) {
 		this.service
-			.getProducts(req, res)
+			.getOrders(req, res)
 			.then((data) => {
 				res.status(200).json(data);
 			})

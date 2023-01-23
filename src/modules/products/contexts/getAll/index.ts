@@ -1,7 +1,7 @@
-import GetAllController from "./getall.controller";
-import GetAllService from "./getall.service";
+import GetAllProductsController from "./getall.controller";
+import GetAllProductsService from "./getall.service";
 
-const getAllService = new GetAllService();
-const getAllController = new GetAllController(getAllService);
+const getAllProductsService = new GetAllProductsService();
+const getAllProductsController = new GetAllProductsController(getAllProductsService);
 
-export { getAllController, getAllService };
+export { getAllProductsController, getAllProductsService };

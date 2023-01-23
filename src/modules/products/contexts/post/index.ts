@@ -1,7 +1,7 @@
-import PostController from './post.controller';
-import PostService from './post.service';
+import PostProductsController from './post.controller';
+import PostProductsService from './post.service';
 
-const postService = new PostService();
-const postController = new PostController(postService);
+const postProductsService = new PostProductsService();
+const postProductsController = new PostProductsController(postProductsService);
 
-export { postService, postController };
+export { postProductsService, postProductsController };
