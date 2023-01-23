@@ -15,13 +15,13 @@ routes.get('/health', (req, res) => res.status(200).json('OK'));
 
 routes.get('/categories', (req, res) => getAllCategoryController.index(req, res));
 routes.post('/categories', (req, res) => postCategoryController.index(req, res));
-routes.delete('/categories', (req, res) => deleteCategoryController.index(req, res));
+routes.delete('/categories/:categoryId', (req, res) => deleteCategoryController.index(req, res));
 
 routes.get('/orders', (req, res) => getAllOrdersController.index(req, res));
 routes.post('/orders', (req, res) => postOrdersController.index(req, res));
-routes.delete('/orders', (req, res) => deleteOrdersController.index(req, res));
+routes.delete('/orders/:orderId', (req, res) => deleteOrdersController.index(req, res));
 
 routes.get('/products', (req, res) => getAllProductsController.index(req, res));
 routes.post('/products', (req, res) => postProductsController.index(req, res));
-routes.delete('/products', (req, res) => deleteProductsController.index(req, res));
+routes.delete('/products/:productId', (req, res) => deleteProductsController.index(req, res));
 

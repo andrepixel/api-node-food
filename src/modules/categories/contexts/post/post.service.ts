@@ -8,9 +8,15 @@ export default class PostCategoriesService {
 	public async postCategories(
 		req: express.Request,
 		res: express.Response,
-	): Promise<express.Response<Schema, Record<string, any>>> {
-		this.schema = await CategorySchema.create(req.body);
+	): Promise<Object> {
+		try {
+			this.schema = await CategorySchema.create(req.body);
 
-		return res.json(this.schema);
+			return this.schema;
+		} catch (error) {
+			console.log(error);
+
+			throw error;
+		}
 	}
 }

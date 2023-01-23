@@ -8,7 +8,7 @@ export default class PostController {
 		this.service
 			.postOrder(req, res)
 			.then((data) => {
-				res.status(200).json(data);
+				res.status(201).json(data);
 			})
 			.catch(() => res.status(500));
 	}
