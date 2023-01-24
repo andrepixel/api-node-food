@@ -1,12 +1,12 @@
 import * as express from 'express';
-import PostService from './post.service';
+import PatchCategoriesService from './patch.service';
 
-export default class PostController {
-	constructor(private readonly service: PostService) {}
+export default class PatchCategoriesController {
+	constructor(private readonly service: PatchCategoriesService) {}
 
 	index(req: express.Request, res: express.Response) {
 		this.service
-			.postOrder(req, res)
+			.patchCategory(req, res)
 			.then((data) => {
 				res.status(201).json(data);
 			})

@@ -10,6 +10,6 @@ export default class PostController {
 			.then((data) => {
 				res.status(201).json(data);
 			})
-			.catch(() => res.status(500));
+			.catch((error) => res.status(400).json({ error: [error.message] }));
 	}
 }

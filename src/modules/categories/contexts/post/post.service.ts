@@ -1,4 +1,3 @@
-import { Model, Schema } from 'mongoose';
 import { CategorySchema } from '../../../../shared/entities/category';
 import * as express from 'express';
 
