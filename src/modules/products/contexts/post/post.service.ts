@@ -1,5 +1,8 @@
 import * as express from 'express';
-import { OrderSchema } from '../../../../shared/entities/order';
+import * as imager from 'image-downloader';
+import path from 'path';
+import { ProductDTO } from 'shared/dtos/product.dto';
+import { ProductSchema } from 'shared/entities/product.js';
 
 export default class PostService {
 	private schema: Object;
@@ -9,7 +12,20 @@ export default class PostService {
 		res: express.Response,
 	): Promise<Object> {
 		try {
-			this.schema = await OrderSchema.create(req.body);
+			let dto: ProductDTO;
+
+			dto = req.body;
+
+			const objectPathImage = await imager.image({
+				url: dto.imagePath,
+				dest: path.join(__dirname, '/../../../../../', 'uploads'),
+			});
+
+			const newPathImage = objectPathImage.filename.split('/');
+
+			dto.imagePath = path.join(__dirname, '/../../../../../', 'uploads') + '/' + newPathImage[newPathImage.length - 1];
+
+			this.schema = await ProductSchema.create(dto);
 
 			return this.schema;
 		} catch (error) {

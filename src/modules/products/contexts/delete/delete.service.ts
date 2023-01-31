@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { Schema } from 'mongoose';
-import { OrderSchema } from '../../../../shared/entities/order';
+import { ProductSchema } from 'shared/entities/product.js';
 
 export default class DeleteService {
 	private schema: Object;
@@ -9,9 +9,9 @@ export default class DeleteService {
 		req: express.Request,
 		res: express.Response,
 	): Promise<express.Response<Schema, Record<string, any>>> {
-		this.schema = OrderSchema.findById(req.params.id);
+		this.schema = ProductSchema.findById(req.params.id);
 
-		const query = await OrderSchema.deleteOne();
+		const query = await ProductSchema.deleteOne();
 
 		return res.json(query);
 	}
