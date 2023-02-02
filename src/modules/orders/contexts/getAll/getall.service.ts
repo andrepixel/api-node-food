@@ -1,4 +1,3 @@
-import { Model, Schema } from 'mongoose';
 import * as express from 'express';
 import { OrderSchema } from '../../../../shared/entities/order';
 
@@ -8,9 +7,9 @@ export default class GetAllService {
 	public async getOrders(
 		req: express.Request,
 		res: express.Response,
-	): Promise<express.Response<Schema, Record<string, any>>> {
+	): Promise<Object> {
 		this.schema = await OrderSchema.find();
 
-		return res.status(200).send(this.schema);
+		return this.schema;
 	}
 }
