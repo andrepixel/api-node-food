@@ -1,3 +1,14 @@
 ## Project API Node with Mongo
 
-* Esse projeto tem como objetivo praticar Typescript e boas práticas de API com Mongo.
+* Project aims to Typescript study and best pratices construction to API, using MongoDB and Mongoose ORM.
+
+### Tecnologies used
+
+* NodeJS
+* Typescript
+* MongoDB
+* Mongoose
+
+### License
+
+* MIT License
