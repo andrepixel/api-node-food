@@ -9,6 +9,16 @@
 * MongoDB
 * Mongoose
 
+### How to use
+
+Use first command npm install to install all dependencies.
+
+	npm i
+
+After, use the command npm run dev to running project em development.
+
+	npm run dev
+
 ### License
 
 * MIT License
